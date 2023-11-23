@@ -1,0 +1,7 @@
+{
+  "name": "finalRubyProject",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

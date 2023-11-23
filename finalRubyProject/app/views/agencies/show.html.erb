@@ -1,0 +1,24 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'agencyForm', media: 'all' %>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Show Agency</h1>
+
+<%= form_for @agency, html: { class: "mb-3" } do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control', value: @agency.name, readonly: true %>
+  </div>
+<% end %>
+
+<div class="buttons">
+    <%= link_to edit_agency_path(@agency), class: 'btn btn-primary fatherButton' do %>
+    Edit
+    <% end %>
+    <%= link_to agencies_path, class: 'btn btn-secondary fatherButton' do %>
+    Back
+    <% end %>
+</div>

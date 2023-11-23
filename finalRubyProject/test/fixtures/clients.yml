@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cpf: MyString
+  agency: 
+  balance: 
+
+two:
+  name: MyString
+  cpf: MyString
+  agency: 
+  balance: 

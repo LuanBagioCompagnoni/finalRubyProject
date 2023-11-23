@@ -1,0 +1,12 @@
+<h1>Editing Agency</h1>
+
+<%= render 'form', agency: @agency %>
+
+<div class="buttons">
+    <%= link_to @agency, class: 'btn btn-secondary fatherButton' do %>
+    Show
+    <% end %>
+    <%= link_to agencies_path, class: 'btn btn-secondary fatherButton' do %>
+    Back
+    <% end %>
+</div>

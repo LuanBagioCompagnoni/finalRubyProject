@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clientOrigin: 1
+  clientDestination: 1
+  agency: 1
+  value: 
+
+two:
+  clientOrigin: 1
+  clientDestination: 1
+  agency: 1
+  value: 

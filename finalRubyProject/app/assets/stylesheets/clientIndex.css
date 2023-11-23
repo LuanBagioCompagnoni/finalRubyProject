@@ -1,0 +1,17 @@
+.container {
+    overflow: auto;
+    margin: 0;
+    width: 100%;
+}
+
+.left {
+    float: left;
+}
+
+.rigth {
+    float: right;
+}
+
+p{
+    margin-left: 20px;
+}

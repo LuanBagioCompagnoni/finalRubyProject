@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FinalRubyProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+  <nav>
+      <%= link_to 'Agency', agencies_path, class:"navButton" %>
+      <%= link_to 'Client', clients_path, class:"navButton" %>
+      <%= link_to 'Operation', operations_path, class:"navButton" %>
+  </nav>
+</header>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

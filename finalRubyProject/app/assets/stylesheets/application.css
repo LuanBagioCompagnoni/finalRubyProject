@@ -1,0 +1,33 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body{
+    margin: 20px;
+}
+
+[data-bs-theme="dark"] .bd-navbar {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.15);
+}
+.bd-navbar {
+    padding: 0.75rem 0;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.15);
+}
+ul {
+    display: flex;
+    align-items: center;
+}
+nav{
+    display: flex;
+    align-items: center;
+    margin-inline: 10px;
+}
+
+.navButton{
+    margin-inline: 15px;
+    color: black;
+
+}
+
+p{
+    margin-left: 20px;
+}

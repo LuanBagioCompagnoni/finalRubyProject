@@ -1,0 +1,27 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'agencyForm', media: 'all' %>
+</head>
+
+<%= form_with(model: agency, local: true, html: { class: "mb-3"}) do |form| %>
+  <% if agency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agency.errors.count, "error") %> prohibited this agency from being saved:</h2>
+
+      <ul>
+      <% agency.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control', required: true%>
+  </div>
+
+  <div >
+      <%= form.submit 'Submit', class: 'button btn btn-primary' %>
+  </div>
+<% end %>
