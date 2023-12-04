@@ -1,5 +1,5 @@
 <head>
-    <%= stylesheet_link_tag 'operationForm', media: 'all' %>
+    <%= stylesheet_link_tag 'general', media: 'all' %>
 </head>
 
 <h1>New Operation</h1>
@@ -7,7 +7,7 @@
 <%= render 'form', operation: @operation %>
 
 <div class="buttons">
-    <%= link_to operations_path, class: 'btn btn-secondary fatherButtonNew' do %>
+    <%= link_to operations_path, class: 'btn btn-secondary fatherButton' do %>
     Back
     <% end %> 
 </div>
