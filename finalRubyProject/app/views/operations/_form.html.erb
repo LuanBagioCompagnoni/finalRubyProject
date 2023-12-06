@@ -27,12 +27,14 @@
   </div>
 
   <div class="mb-3">
-  <%= form.label :value, class: 'form-label', id: "value-input" %>
-  <%= form.text_field :value, class: 'form-control', 'aria-label': 'Amount (to the nearest dollar)', required: true %>
+    <%= form.label :value, class: 'form-label'%>
+    <%= form.text_field :value, class: 'form-control', 'aria-label': 'Amount (to the nearest dollar)', required: true, id: "value-input"  %>
+    <div class="span" id="span-value">
+    </div>
   </div>
 
   <div>
-    <%= form.submit 'Submit', class: 'button btn btn-primary', required: true %>
+    <%= form.submit 'Submit', class: 'button btn btn-primary', id:"submitButton", required: true %>
   </div> 
 <% end %>
 
@@ -40,5 +42,17 @@
 <script>
   document.getElementById('value-input').addEventListener('input', function() {
     this.value = this.value.replace(/,/g, '.');
+  });
+
+  document.getElementById('value-input').addEventListener('input', e=> {
+    value = e.target.value;
+    if(!/^[0-9.,]+$/.test(value)){
+        document.getElementById("submitButton").disabled = true;
+      document.getElementById('span-value').innerHTML = " The value must have just numbers!"
+    }
+    else{
+        document.getElementById("submitButton").disabled = false;
+      document.getElementById('span-value').innerText = "";
+    }
   });
 </script>

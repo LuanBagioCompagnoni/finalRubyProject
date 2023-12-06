@@ -38,3 +38,8 @@ nav{
 p{
     margin-left: 20px;
 }
+
+.span{
+    color: red;
+    font-size: small;
+}

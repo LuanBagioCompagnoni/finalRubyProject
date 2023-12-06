@@ -2,7 +2,7 @@
     <%= stylesheet_link_tag 'general', media: 'all' %>
 </head>
 
-<%= form_with(model: client, local: true, html: { class: 'mb-3' }) do |form| %>
+<%= form_with(model: client, local: true, html: { class: 'mb-3', id: 'myForm' }) do |form| %>
   <% if client.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
@@ -22,8 +22,11 @@
 
   <div class="mb-3">
     <%= form.label :cpf, class: 'form-label' %>
-    <%= form.text_field :cpf, class: 'form-control', maxlength: 11, required: true %>
+    <%= form.text_field :cpf, class: 'form-control', id: 'cpf', maxlength: 11, required: true %>
+    <div class="span" id="span-cpf">
+    </div>
   </div>
+  
 
   <div class="mb-3">
     <%= form.label :agency, class: 'form-label' %>
@@ -33,15 +36,41 @@
   <div class="mb-3">
     <%= form.label :balance, class: 'form-label' %>
     <%= form.text_field :balance, class: 'form-control', id: "balance-input", required: true %>
+    <div class="span" id="span-balance">
+    </div>
   </div>
 
   <div>
-    <%= form.submit 'Submit', class: 'button btn btn-primary', required: true %>
+    <%= form.submit 'Submit', class: 'button btn btn-primary', id: 'submitButton', required: true %>
   </div> 
 <% end %>
 
 <script>
   document.getElementById('balance-input').addEventListener('input', function() {
-    this.value = this.value.replace(/,/g, '.');
+    this.value = this.value.replace(/,/, '.');
+  });
+
+  document.getElementById('cpf').addEventListener('input', e=> {
+    cpf = e.target.value;
+    if(!/^[0-9]+$/.test(cpf)){
+        document.getElementById("submitButton").disabled = true;
+      document.getElementById('span-cpf').innerHTML = " The CPF must have just numbers!"
+    }
+    else{
+        document.getElementById("submitButton").disabled = false;
+      document.getElementById('span-cpf').innerText = "";
+    }
+  });
+
+  document.getElementById('balance-input').addEventListener('input', e=> {
+    balance = e.target.value;
+    if(!/^[0-9.,]+$/.test(balance)){
+        document.getElementById("submitButton").disabled = true;
+      document.getElementById('span-balance').innerHTML = " The Balance must have just numbers!"
+    }
+    else{
+        document.getElementById("submitButton").disabled = false;
+      document.getElementById('span-balance').innerText = "";
+    }
   });
 </script>
